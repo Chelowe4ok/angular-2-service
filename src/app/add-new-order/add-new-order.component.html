@@ -1,0 +1,8 @@
+﻿<div class="add-new-product">
+  <div class="form-container">
+    <form class="add-new-product-form" [formGroup]="addNewProductForm" (ngSubmit)="addNewProduct($event)">
+      <input formControlName="url" type="text" (keyup)="onKeyAddNewProduct($event)" placeholder="e.q. https://ua.sroprtsdeirect.com/" required />
+      <button type="submit" [disabled]="!addNewProductForm.valid">Добавить</button>
+    </form>
+  </div>
+</div>

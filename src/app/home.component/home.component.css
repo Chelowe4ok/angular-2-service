@@ -1,0 +1,119 @@
+﻿.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    border-color: #39ad31;
+}
+.navbar-default {
+  background-color: #43474a;
+  border-color: #39ad31;
+  z-index: 4;
+}
+
+  .navbar-default .navbar-brand {
+    color: #39ad31;
+    font-family: Lato-Light;
+    font-size: 1.2em;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+    font-family: Lato-Light;
+    font-size: 1.4em;
+  }
+
+.dropdown-menu > li > a {
+  color: #43474a;
+  font-family: Lato-Light;
+  font-size: 1.2em;
+}
+
+header {
+  background-image: url("./../../assets/images/truck-sd-1.png");
+  background-size: cover;
+  background-position: right center;
+  width: 100%;
+}
+
+.section {
+  font-family: Lato-Light;
+  height: 100vh;
+}
+
+#sectionOne {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 55px;
+  color: #43474a;
+}
+
+@media (max-width: 612px) {
+  #sectionOne {
+    line-height: 30px;
+    font-size: 1.1em;
+  }
+}
+  #sectionOne h1 {
+    margin-top: 100px;
+    font-size: 2em;
+  }
+
+#overlay {
+  z-index: 3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+  position: fixed; /* всегдa перекрывaет весь сaйт */
+  background-color: #000; /* чернaя */
+  opacity: 0.8; /* нo немнoгo прoзрaчнa */
+  -moz-opacity: 0.8; /* фикс прозрачности для старых браузеров */
+  filter: alpha(opacity=80);
+  width: 100%;
+  height: 100%; /* рaзмерoм вo весь экрaн */
+  top: 0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+  left: 0;
+  cursor: pointer;
+}
+
+/* btn-down */
+
+.btn-down {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform :translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+  }
+}
+
+.arrow {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/2000px-Chevron_down_font_awesome.svg.png);
+  background-size: contain;
+}

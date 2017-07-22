@@ -1,3 +1,2 @@
-<h1>
-  {{title}}
-</h1>
+﻿<router-outlet *ngIf="!isIFrame"></router-outlet>
+<div *ngIf="isIFrame">Iframe</div>

@@ -1,0 +1,66 @@
+﻿<header class="section">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Sports direct delivery</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Собрать корзину </a></li>
+          <li><a href="#">Как это работает</a></li>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+
+        <ul *ngIf="!loggedIn" class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Акаунт <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="login" (click)="auth($event)">Вход</a></li>
+              <li><a href="#" id="registration" (click)="auth($event)">Регистрация</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul *ngIf="loggedIn" class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Акаунт <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/information">Информация</a></li>
+              <li><a href="#">Заказы</a></li>
+              <li><a href="#" (click)="logout()">Виход</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  
+
+
+  <div id="auth-modal" *ngIf="authModal">
+    <register-form *ngIf="toggle" (onToggle)="onToggle($event)" (onClose)="close()"></register-form>
+    <login-form *ngIf="!toggle" (onToggle)="onToggle($event)" (onClose)="close()"></login-form>
+  </div>
+  <div id="overlay" *ngIf="authModal"></div>
+
+
+
+  <div id="sectionOne">
+    <h1>Доставка товаров с SportsDirect в Украину</h1>
+    <p>Выбирай товари в одном из крупнейшых ритейлеров Европи и дели стоимость доставки с другими покупателями </p>
+  </div>
+  <div class="btn-down arrow" data-href="second-section" (click)="scroll()">
+  </div>
+</header>
+<div class="section" id="second-section">
+  <queues></queues>
+</div>

@@ -1,14 +1,50 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Development</title>
-  <base href="/">
+  <head>
+    <title>Angular QuickStart</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root>Loading...</app-root>
-</body>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="./assets/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./assets/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <script>
+      var buttons = document.querySelectorAll(".radmenu a");
+
+for (var i=0, l=buttons.length; i<l; i++) {
+  var button = buttons[i];
+  button.onclick = setSelected;
+}
+
+function setSelected(e) {
+    if (this.classList.contains("selected")) {
+      this.classList.remove("selected");
+      if (!this.parentNode.classList.contains("radmenu")) {
+        this.parentNode.parentNode.parentNode.querySelector("a").classList.add("selected")
+      } else {
+        this.classList.add("show");
+      }
+    } else {
+      this.classList.add("selected");
+      if (!this.parentNode.classList.contains("radmenu")) {
+        this.parentNode.parentNode.parentNode.querySelector("a").classList.remove("selected")
+      } else {
+        this.classList.remove("show");
+      }
+    }
+    return false;
+}
+    </script>
+
+  </head>
+
+  <body>
+    <app-root><img src="https://static1.squarespace.com/static/55e841ece4b04afad8629afc/55f9320fe4b0fa2519adac87/56141649e4b0dacee3881685/1444157004754/loadinganimation1.gif?format=1000w" /></app-root>
+  </body>
 </html>

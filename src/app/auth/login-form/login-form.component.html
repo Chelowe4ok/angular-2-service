@@ -1,0 +1,17 @@
+﻿<div class="login-page">
+  <span class="close" (click)="close()"><img src="../../../assets/images/close-modal.png" /></span>
+  <div class="form">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login($event)">
+      <input formControlName="email" type="email" (keyup)="onKeyEmail($event)" placeholder="Email" required />
+      <control-messages [control]="loginForm.controls.email"></control-messages>
+      <server-error [status]="statusEmail" [message]="serverErrorMessageEmail"></server-error>
+
+      <input formControlName="password" type="password" (keyup)="onKeyPassword($event)" placeholder="Пароль" required />
+      <control-messages [control]="loginForm.controls.password"></control-messages>
+      <server-error [status]="statusPassword" [message]="serverErrorMessagePassword"></server-error>
+
+      <button type="submit" [disabled]="!loginForm.valid">Войти</button>
+      <p class="message">Не зарегистрирован? <span id="registration" (click)="toggle(true)">Создать аккаунт</span></p>
+    </form>
+  </div>
+</div>

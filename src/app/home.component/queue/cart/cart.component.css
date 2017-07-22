@@ -1,0 +1,18 @@
+﻿ul {
+  margin-left: 0; /* Отступ слева в браузере IE и Opera */
+  padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+li {
+  list-style-type: none;
+}
+
+@media (max-width: 678px) {
+  li {
+    float: left;
+  }
+}
+
+li>img {
+  width: 100px;
+}

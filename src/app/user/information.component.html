@@ -1,0 +1,6 @@
+﻿<div *ngIf="!error">
+  <p>email: {{  user?.email }}</p>
+  <p>password: {{ user?.password }}</p>
+  <a routerLink="/" class="btn-primary">На главную</a>
+</div>
+<div *ngIf="error" class="error">{{ error }}</div>
