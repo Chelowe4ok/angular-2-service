@@ -1,5 +1,6 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { NotFoundModule } from './not-found.component/not-found.module';
 import { AuthModule } from './auth/auth.module';
@@ -46,7 +47,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [BrowserModule, NotFoundModule, FormsModule, ReactiveFormsModule, AuthModule, AddNewOrderModule, RouterModule.forRoot(routes) ],
+    imports: [BrowserModule, BrowserAnimationsModule, NotFoundModule, FormsModule, ReactiveFormsModule, AuthModule, AddNewOrderModule, RouterModule.forRoot(routes) ],
     declarations: [UserComponent, AppComponent, HomeComponent, ScrollDown, QueueComponent, CartComponent, AddNewOrderComponent, AuthComponent],
     providers: [CartService, UserService, UserResolve, AddNewOrderService, ValidationService],
     bootstrap: [ AppComponent ]

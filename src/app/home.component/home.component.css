@@ -117,3 +117,11 @@ header {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/2000px-Chevron_down_font_awesome.svg.png);
   background-size: contain;
 }
+
+.inactive {
+  display: block;
+}
+
+.active {
+  display: none;
+}

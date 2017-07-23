@@ -58,7 +58,7 @@
     <h1>Доставка товаров с SportsDirect в Украину</h1>
     <p>Выбирай товари в одном из крупнейшых ритейлеров Европи и дели стоимость доставки с другими покупателями </p>
   </div>
-  <div class="btn-down arrow" data-href="second-section" (click)="scroll()">
+  <div class="btn-down arrow" [ngClass]="scrollState" data-href="second-section" [@scrollState]="scrollState" (click)="scroll()" scroll-down>
   </div>
 </header>
 <div class="section" id="second-section">
